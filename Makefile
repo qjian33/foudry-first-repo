@@ -76,4 +76,6 @@ deploy-ganche:
 deploy-sepolia:
 		forge script script/DeployFundMe.s.sol:DeployFundMe --rpc-url $(SEPOLIA_RPC_URL) --private-key $(SEPOLIA_PRIVATE_KEY) --broadcast  --verify --etherscan-api-key $(ETHERSCAN_API_KEY) -vvvv
 
-
+deploy_script:
+	forge create --rpc-url $(SEPOLIA_RPC_URL)  --private-key $(SEPOLIA_PRIVATE_KEY)  --etherscan-api-key $(ETHERSCAN_API_KEY)  --verify script/DeployFundMe.s.sol:DeployFundMe
+	
